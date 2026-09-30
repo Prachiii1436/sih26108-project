@@ -1,0 +1,79 @@
+# =============================================================================
+#  SIH26108 - Apache / XAMPP rules for this project
+#
+#  Location: C:/xampp/htdocs/sih26108-project/.htaccess
+#
+#  Serves the built React SPA from  frontend/dist/  and rewrites clean URLs to
+#  it. The SPA calls the FastAPI backend on  http://127.0.0.1:8000  directly
+#  (start it with:  cd backend && venv\Scripts\python.exe run.py) - see
+#  section 2 for why this file cannot proxy for you.
+#
+#  Apache prerequisites (C:/xampp/apache/conf/httpd.conf):
+#    * AllowOverride All   for C:/xampp/htdocs
+#    * mod_rewrite
+#
+#  URL map:
+#    /sih26108-project/                  -> frontend/dist/index.html
+#    /sih26108-project/<spa route>       -> frontend/dist/index.html  (SPA fallback)
+#    /sih26108-project/assets/*           -> frontend/dist/assets/*
+#    /sih26108-project/api/*              -> DISABLED, see section 2 below
+#
+#  Build the SPA after changing frontend/.env:
+#    cd frontend && npm run build
+# =============================================================================
+
+Options -Indexes
+DirectoryIndex frontend/dist/index.html index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Folder name under htdocs - keep in sync with VITE_BASE_PATH in frontend/.env
+  RewriteBase /sih26108-project/
+
+  # ---------------------------------------------------------------------
+  # 1) Never expose sources, dumps or secrets through the web
+  # ---------------------------------------------------------------------
+  RewriteRule ^(?:backend|database|scripts|data|apache|venv|node_modules)(?:/|$) - [F,L,NC]
+  RewriteRule ^frontend/(?!dist(?:/|$)).* - [F,L]
+  RewriteRule (?:^|/)\.env - [F,L,NC]
+  RewriteRule \.(?:sql|py|md|ini|log|sqlite|db|env|lock)$ - [F,L,NC]
+
+  # ---------------------------------------------------------------------
+  # 2) API -> FastAPI backend: NOT proxyable from this file
+  #
+  # Apache 2.4 will not proxy from per-directory context here. The [P] flag
+  # reaches mod_proxy but finds no scheme handler, so every request 500s with
+  #   AH01144: No protocol handler was valid for the URL ... (scheme 'http')
+  # and ProxyPass is rejected outright ("ProxyPass not allowed here").
+  #
+  # So the SPA is built with VITE_API_URL=http://127.0.0.1:8000/api in
+  # frontend/.env and calls the backend cross-origin; backend/.env already
+  # allows the http://localhost origin.
+  #
+  # To go back to same-origin instead, put this in httpd.conf (server config
+  # only, then restart Apache), blank VITE_API_URL and rebuild:
+  #
+  #   ProxyPass        /sih26108-project/api/ http://127.0.0.1:8000/api/
+  #   ProxyPassReverse /sih26108-project/api/ http://127.0.0.1:8000/api/
+  # ---------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------
+  # 3) Built assets: /sih26108-project/assets/... -> frontend/dist/assets/...
+  #    (single hop; the (?!frontend/) guard prevents a rewrite loop)
+  # ---------------------------------------------------------------------
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^((?!frontend/).*)$ frontend/dist/$1 [L]
+
+  # ---------------------------------------------------------------------
+  # 4) SPA fallback: unknown paths get the React entry point
+  # ---------------------------------------------------------------------
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^frontend/dist/.*$ frontend/dist/index.html [L]
+
+  # ---------------------------------------------------------------------
+  # 5) Site root
+  # ---------------------------------------------------------------------
+  RewriteRule ^$ frontend/dist/index.html [L]
+</IfModule>

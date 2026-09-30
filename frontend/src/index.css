@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-50 font-sans text-[15px] leading-relaxed text-ink-800 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-ink-900;
+  }
+
+  /* One consistent focus ring for keyboard users across the whole app. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-600 ring-offset-2 ring-offset-white;
+  }
+
+  ::selection {
+    @apply bg-primary-100 text-primary-900;
+  }
+}
+
+@layer components {
+  /* ------------------------------------------------------------- surfaces */
+
+  .card {
+    @apply rounded-2xl border border-ink-200 bg-white shadow-card;
+  }
+
+  .card-pad {
+    @apply p-5 sm:p-6;
+  }
+
+  /* --------------------------------------------------------------- inputs */
+
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-ink-800;
+  }
+
+  .hint {
+    @apply mt-1.5 text-xs leading-relaxed text-ink-500;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-ink-300 bg-white px-3.5 py-2.5 text-[15px] text-ink-900
+           placeholder:text-ink-400 focus:border-primary-600 focus:outline-none
+           focus:ring-2 focus:ring-primary-600/20 disabled:cursor-not-allowed disabled:bg-ink-50;
+  }
+
+  textarea.input {
+    @apply leading-relaxed;
+  }
+
+  /* Skip link: hidden until focused, for keyboard + screen-reader users. */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50
+           focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm
+           focus:font-semibold focus:text-primary-700 focus:shadow-raised;
+  }
+
+  /* Long-form report typography, used inside the report preview. */
+  .report-body {
+    @apply text-sm leading-relaxed text-ink-700;
+  }
+}
+
+@layer utilities {
+  /* Thin scrollbars for the scrollable panes on desktop. */
+  .scroll-slim {
+    scrollbar-width: thin;
+  }
+  .scroll-slim::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scroll-slim::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-ink-300;
+  }
+  .scroll-slim::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Respect users who ask the OS to reduce motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,1052 @@
+{
+  "kb_version": "1.0.0",
+  "label": "Prototype Standards Knowledge Base",
+  "notice": "Curated demonstration knowledge base for the SIH26108 prototype. It contains a small hand-authored sample of standard records with structured scope conditions - it is NOT a complete catalogue of Bureau of Indian Standards publications and is NOT a substitute for verifying the current edition on bis.gov.in.",
+  "standards": [
+    {
+      "id": "IS15558-2023",
+      "is_number": "IS 15558",
+      "edition": "IS 15558:2023",
+      "year": 2023,
+      "title": "Electric storage water heaters - Specification",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Electrical",
+      "category": "Appliances",
+      "product_family": "electric-water-heater",
+      "product_types": ["Electric Water Heater", "Storage Water Heater", "Geyser"],
+      "scope": "Specifies construction, performance, safety and marking requirements for electric storage type water heaters intended for operation on a 230 V, 50 Hz single-phase AC supply, with rated storage capacities from 50 L to 5000 L, installed in domestic, institutional, commercial and industrial premises.",
+      "keywords": ["water heater", "geyser", "electric water heater", "storage heater", "230 V", "1000 litre", "institutional"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["Electric Water Heater", "Storage Water Heater", "Geyser"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to electric storage type water heaters (geysers) only.",
+          "question": "Please specify the product being procured.",
+          "options": ["Electric Water Heater", "Storage Water Heater", "Geyser", "Safety Helmet", "TMT Rebar", "uPVC Pipe"]
+        },
+        {
+          "key": "capacity",
+          "dimension": "capacity",
+          "label": "Capacity",
+          "operator": "range",
+          "min": 50,
+          "max": 5000,
+          "unit": "L",
+          "clause": "Clause 4.1 - Rated capacity",
+          "critical": true,
+          "text": "Rated storage capacity shall be not less than 50 L and not more than 5000 L.",
+          "question": "Please specify the rated storage capacity in litres.",
+          "options": []
+        },
+        {
+          "key": "voltage",
+          "dimension": "voltage",
+          "label": "Voltage",
+          "operator": "range",
+          "min": 220,
+          "max": 240,
+          "unit": "V",
+          "clause": "Clause 4.2 - Rated supply voltage",
+          "critical": true,
+          "text": "Applies to water heaters rated for a single-phase AC supply of 220-240 V, 50 Hz.",
+          "question": "Please specify the rated supply voltage.",
+          "options": ["230 V", "415 V", "110 V"]
+        },
+        {
+          "key": "application",
+          "dimension": "application",
+          "label": "Application",
+          "operator": "one_of",
+          "allowed": ["Domestic", "Institutional", "Commercial", "Industrial"],
+          "clause": "Clause 1 - Scope, para 2",
+          "critical": true,
+          "text": "Covers installations in domestic, institutional, commercial and industrial premises.",
+          "question": "Please specify the intended application.",
+          "options": ["Domestic", "Institutional", "Industrial", "Commercial"]
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 15558:2023", "status": "Current in prototype database", "year": 2023, "note": "Latest edition carried in the prototype record."},
+        {"edition": "IS 15558:2018", "status": "Superseded", "year": 2018, "note": "Replaced by the 2023 edition in this prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 15560:2021", "title": "Household and similar electrical appliances - Safety - Particular requirements for storage water heaters", "relationship": "Safety Standard"},
+        {"edition": "IS 13195:2018", "title": "Methods of test for electric storage water heaters - Part 1 Capacity and energy consumption", "relationship": "Test Method"},
+        {"edition": "IS 4151:2022", "title": "Installation of electric water heaters - Code of practice", "relationship": "Installation Standard"},
+        {"edition": "IS 302 (Part 1):2016", "title": "Household and similar electrical appliances - Safety - Part 1 General requirements", "relationship": "Normative Reference"}
+      ],
+      "evidence": [
+        {"clause": "Clause 1 - Scope", "text": "This standard applies to electric storage type water heaters (geysers) rated 220-240 V, 50 Hz.", "supports": "product_type"},
+        {"clause": "Clause 4.1 - Rated capacity", "text": "Rated storage capacity shall be not less than 50 L and not more than 5000 L.", "supports": "capacity"},
+        {"clause": "Clause 4.2 - Rated supply voltage", "text": "Applies to water heaters rated for a single-phase AC supply of 220-240 V, 50 Hz.", "supports": "voltage"},
+        {"clause": "Clause 1 - Scope, para 2", "text": "Covers installations in domestic, institutional, commercial and industrial premises.", "supports": "application"}
+      ]
+    },
+    {
+      "id": "IS15558-2018",
+      "is_number": "IS 15558",
+      "edition": "IS 15558:2018",
+      "year": 2018,
+      "title": "Electric storage water heaters - Specification (previous edition)",
+      "status": "superseded",
+      "status_label": "Superseded by IS 15558:2023",
+      "sector": "Electrical",
+      "category": "Appliances",
+      "product_family": "electric-water-heater",
+      "product_types": ["Electric Water Heater", "Storage Water Heater", "Geyser"],
+      "scope": "Previous edition of the specification for electric storage water heaters. Retained in the prototype knowledge base so that superseded editions can be demonstrated and reported separately.",
+      "keywords": ["water heater", "geyser", "electric water heater", "storage heater", "230 V"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["Electric Water Heater", "Storage Water Heater", "Geyser"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to electric storage type water heaters (geysers) only.",
+          "question": "Please specify the product being procured.",
+          "options": ["Electric Water Heater", "Storage Water Heater", "Geyser"]
+        },
+        {
+          "key": "capacity",
+          "dimension": "capacity",
+          "label": "Capacity",
+          "operator": "range",
+          "min": 50,
+          "max": 3000,
+          "unit": "L",
+          "clause": "Clause 4.1 - Rated capacity",
+          "critical": true,
+          "text": "Rated storage capacity shall be not less than 50 L and not more than 3000 L.",
+          "question": "Please specify the rated storage capacity in litres.",
+          "options": []
+        },
+        {
+          "key": "voltage",
+          "dimension": "voltage",
+          "label": "Voltage",
+          "operator": "range",
+          "min": 220,
+          "max": 240,
+          "unit": "V",
+          "clause": "Clause 4.2 - Rated supply voltage",
+          "critical": true,
+          "text": "Applies to water heaters rated for a single-phase AC supply of 220-240 V, 50 Hz.",
+          "question": "Please specify the rated supply voltage.",
+          "options": []
+        },
+        {
+          "key": "application",
+          "dimension": "application",
+          "label": "Application",
+          "operator": "one_of",
+          "allowed": ["Domestic", "Institutional", "Commercial", "Industrial"],
+          "clause": "Clause 1 - Scope, para 2",
+          "critical": true,
+          "text": "Covers installations in domestic, institutional, commercial and industrial premises.",
+          "question": "Please specify the intended application.",
+          "options": ["Domestic", "Institutional", "Industrial", "Commercial"]
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 15558:2023", "status": "Current in prototype database", "year": 2023, "note": "Supersedes this edition."},
+        {"edition": "IS 15558:2018", "status": "Superseded", "year": 2018, "note": "Withdrawn - do not cite in a new procurement specification."}
+      ],
+      "related": [
+        {"edition": "IS 15558:2023", "title": "Electric storage water heaters - Specification", "relationship": "Replacing Standard"},
+        {"edition": "IS 13195:2018", "title": "Methods of test for electric storage water heaters - Part 1", "relationship": "Test Method"},
+        {"edition": "IS 4151:2022", "title": "Installation of electric water heaters - Code of practice", "relationship": "Installation Standard"}
+      ],
+      "evidence": [
+        {"clause": "Edition record", "text": "Prototype record marks IS 15558:2018 as superseded by IS 15558:2023.", "supports": "status"},
+        {"clause": "Clause 4.1 - Rated capacity", "text": "Rated storage capacity shall be not less than 50 L and not more than 3000 L.", "supports": "capacity"}
+      ]
+    },
+    {
+      "id": "IS15560-2021",
+      "is_number": "IS 15560",
+      "edition": "IS 15560:2021",
+      "year": 2021,
+      "title": "Household and similar electrical appliances - Safety - Particular requirements for storage water heaters",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Electrical",
+      "category": "Safety",
+      "product_family": "electric-water-heater",
+      "product_types": ["Electric Water Heater", "Storage Water Heater"],
+      "scope": "Safety requirements for storage water heaters intended for household (domestic) use and similar applications without supervision. The scope paragraph limits applicability to household premises; industrial and institutional bulk installations are handled by the product standard and the installation code.",
+      "keywords": ["water heater", "geyser", "safety", "household", "domestic", "protection", "electric shock"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["Electric Water Heater", "Storage Water Heater"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to storage water heaters for household use.",
+          "question": "Please specify the product being procured.",
+          "options": ["Electric Water Heater", "Storage Water Heater"]
+        },
+        {
+          "key": "voltage",
+          "dimension": "voltage",
+          "label": "Voltage",
+          "operator": "range",
+          "min": 220,
+          "max": 240,
+          "unit": "V",
+          "clause": "Clause 4 - Rated voltage",
+          "critical": true,
+          "text": "Applies to appliances rated 220-240 V.",
+          "question": "Please specify the rated supply voltage.",
+          "options": []
+        },
+        {
+          "key": "application",
+          "dimension": "application",
+          "label": "Application",
+          "operator": "one_of",
+          "allowed": ["Domestic"],
+          "clause": "Scope, para 1",
+          "critical": true,
+          "text": "Limited to household (domestic) premises and similar use.",
+          "question": "Please specify the intended application.",
+          "options": ["Domestic", "Institutional", "Industrial", "Commercial"]
+        }
+      ],
+      "exclusions": [
+        {
+          "dimension": "application",
+          "not_allowed": ["Institutional", "Industrial", "Commercial"],
+          "clause": "Scope, para 1",
+          "reason": "Scope is limited to household (domestic) premises.",
+          "note": "Institutional and industrial bulk hot-water installations are outside the scope of this safety standard in the prototype record."
+        }
+      ],
+      "versions": [
+        {"edition": "IS 15560:2021", "status": "Current in prototype database", "year": 2021, "note": "Single edition carried in the prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 15558:2023", "title": "Electric storage water heaters - Specification", "relationship": "Product Standard"},
+        {"edition": "IS 302 (Part 1):2016", "title": "Household and similar electrical appliances - Safety - Part 1 General requirements", "relationship": "Normative Reference"},
+        {"edition": "IS 13195:2018", "title": "Methods of test for electric storage water heaters - Part 1", "relationship": "Test Method"}
+      ],
+      "evidence": [
+        {"clause": "Scope, para 1", "text": "This standard applies to storage water heaters intended for household use or similar use without supervision.", "supports": "application"},
+        {"clause": "Clause 4 - Rated voltage", "text": "Applies to appliances rated 220-240 V.", "supports": "voltage"}
+      ]
+    },
+    {
+      "id": "IS302P1-2016",
+      "is_number": "IS 302 (Part 1)",
+      "edition": "IS 302 (Part 1):2016",
+      "year": 2016,
+      "title": "Household and similar electrical appliances - Safety - Part 1 General requirements",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Electrical",
+      "category": "Safety",
+      "product_family": "electric-water-heater",
+      "product_types": ["Electric Water Heater", "Storage Water Heater", "Geyser", "Electric Appliance"],
+      "scope": "General safety requirements and tests applicable to household and similar electrical appliances, including water heaters. Product-specific particular requirements are applied together with this general standard.",
+      "keywords": ["safety", "household appliance", "electric shock", "insulation", "earthing", "marking", "general requirements"],
+      "conditional_note": "Applicable subject to confirmation of the water-vessel material, which the prototype knowledge base uses for marking verification.",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["Electric Water Heater", "Storage Water Heater", "Geyser", "Electric Appliance"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to household and similar electrical appliances.",
+          "question": "Please specify the product being procured.",
+          "options": ["Electric Water Heater", "Storage Water Heater", "Geyser"]
+        },
+        {
+          "key": "voltage",
+          "dimension": "voltage",
+          "label": "Voltage",
+          "operator": "range",
+          "min": 220,
+          "max": 240,
+          "unit": "V",
+          "clause": "Clause 4 - Rated voltage",
+          "critical": true,
+          "text": "Applies to appliances rated 220-240 V.",
+          "question": "Please specify the rated supply voltage.",
+          "options": []
+        },
+        {
+          "key": "application",
+          "dimension": "application",
+          "label": "Application",
+          "operator": "one_of",
+          "allowed": ["Domestic", "Institutional", "Commercial", "Industrial"],
+          "clause": "Clause 1 - Scope, para 3",
+          "critical": true,
+          "text": "Applies to appliances in household premises and similar establishments.",
+          "question": "Please specify the intended application.",
+          "options": ["Domestic", "Institutional", "Industrial", "Commercial"]
+        },
+        {
+          "key": "tank_material",
+          "dimension": "tank_material",
+          "label": "Water Vessel Material",
+          "operator": "one_of",
+          "allowed": ["Stainless Steel", "Enamelled Steel", "Copper"],
+          "clause": "Clause 30 - Marking of material",
+          "critical": false,
+          "text": "The material of the heated-water vessel shall be identified for the marking check.",
+          "question": "Please specify the water vessel (tank) material.",
+          "options": ["Stainless Steel", "Enamelled Steel", "Copper"]
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 302 (Part 1):2016", "status": "Current in prototype database", "year": 2016, "note": "General requirements edition used in this prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 15560:2021", "title": "Particular requirements for storage water heaters", "relationship": "Particular Requirements"},
+        {"edition": "IS 15558:2023", "title": "Electric storage water heaters - Specification", "relationship": "Product Standard"}
+      ],
+      "evidence": [
+        {"clause": "Clause 1 - Scope", "text": "Applies to household and similar electrical appliances.", "supports": "product_type"},
+        {"clause": "Clause 30 - Marking of material", "text": "The material of the heated-water vessel shall be identified for the marking check.", "supports": "tank_material"}
+      ]
+    },
+    {
+      "id": "IS4151-2022",
+      "is_number": "IS 4151",
+      "edition": "IS 4151:2022",
+      "year": 2022,
+      "title": "Installation of electric water heaters - Code of practice",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Electrical",
+      "category": "Installation",
+      "product_family": "electric-water-heater",
+      "product_types": ["Electric Water Heater", "Storage Water Heater", "Geyser"],
+      "scope": "Code of practice for the selection, location, erection, commissioning and maintenance of electric water heaters. Applicability of individual clauses depends on whether the heater is installed indoors, outdoors or in a semi-outdoor location.",
+      "keywords": ["installation", "erection", "water heater", "mounting", "ventilation", "indoor", "outdoor"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["Electric Water Heater", "Storage Water Heater", "Geyser"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to the installation of electric water heaters.",
+          "question": "Please specify the product being procured.",
+          "options": ["Electric Water Heater", "Storage Water Heater", "Geyser"]
+        },
+        {
+          "key": "capacity",
+          "dimension": "capacity",
+          "label": "Capacity",
+          "operator": "range",
+          "min": 100,
+          "max": 3000,
+          "unit": "L",
+          "clause": "Clause 4 - Selection of heater",
+          "critical": true,
+          "text": "Installation clauses cover heaters with rated capacity of 100 L to 3000 L.",
+          "question": "Please specify the rated storage capacity in litres.",
+          "options": []
+        },
+        {
+          "key": "voltage",
+          "dimension": "voltage",
+          "label": "Voltage",
+          "operator": "range",
+          "min": 220,
+          "max": 240,
+          "unit": "V",
+          "clause": "Clause 5 - Electrical connection",
+          "critical": true,
+          "text": "Electrical connection clauses apply to 220-240 V supplies.",
+          "question": "Please specify the rated supply voltage.",
+          "options": []
+        },
+        {
+          "key": "application",
+          "dimension": "application",
+          "label": "Application",
+          "operator": "one_of",
+          "allowed": ["Domestic", "Institutional", "Industrial", "Commercial"],
+          "clause": "Clause 1 - Scope, para 2",
+          "critical": true,
+          "text": "Covers domestic, institutional, commercial and industrial installations.",
+          "question": "Please specify the intended application.",
+          "options": ["Domestic", "Institutional", "Industrial", "Commercial"]
+        },
+        {
+          "key": "installation_location",
+          "dimension": "installation_location",
+          "label": "Installation Location",
+          "operator": "one_of",
+          "allowed": ["Indoor", "Outdoor", "Semi-outdoor"],
+          "clause": "Clause 6 - Location and ventilation",
+          "critical": true,
+          "text": "Different clearance and ventilation clauses apply to indoor, outdoor and semi-outdoor installations; the applicable clause set cannot be selected until the location is known.",
+          "question": "Please specify the intended installation location.",
+          "options": ["Indoor", "Outdoor", "Semi-outdoor"]
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 4151:2022", "status": "Current in prototype database", "year": 2022, "note": "Current code of practice in this prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 15558:2023", "title": "Electric storage water heaters - Specification", "relationship": "Product Standard"},
+        {"edition": "IS 15560:2021", "title": "Particular requirements for storage water heaters", "relationship": "Safety Standard"},
+        {"edition": "IS 302 (Part 1):2016", "title": "General requirements for household appliances", "relationship": "Normative Reference"}
+      ],
+      "evidence": [
+        {"clause": "Clause 6 - Location and ventilation", "text": "Different clearance and ventilation clauses apply to indoor, outdoor and semi-outdoor installations; the applicable clause set cannot be selected until the location is known.", "supports": "installation_location"},
+        {"clause": "Clause 4 - Selection of heater", "text": "Installation clauses cover heaters with rated capacity of 100 L to 3000 L.", "supports": "capacity"}
+      ]
+    },
+    {
+      "id": "IS13195-2018",
+      "is_number": "IS 13195",
+      "edition": "IS 13195:2018",
+      "year": 2018,
+      "title": "Methods of test for electric storage water heaters - Part 1 Capacity and energy consumption",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Electrical",
+      "category": "Test Method",
+      "product_family": "electric-water-heater",
+      "product_types": ["Electric Water Heater", "Storage Water Heater", "Geyser"],
+      "scope": "Test method for determining the rated storage capacity and energy consumption of electric storage water heaters. The prototype record restricts the method to heaters with a rated capacity up to 500 L, for which the test apparatus is standardised.",
+      "keywords": ["test method", "energy consumption", "capacity test", "water heater", "efficiency"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["Electric Water Heater", "Storage Water Heater", "Geyser"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to electric storage water heaters.",
+          "question": "Please specify the product being procured.",
+          "options": ["Electric Water Heater", "Storage Water Heater", "Geyser"]
+        },
+        {
+          "key": "capacity",
+          "dimension": "capacity",
+          "label": "Capacity",
+          "operator": "range",
+          "min": 5,
+          "max": 500,
+          "unit": "L",
+          "clause": "Clause 3.2 - Test apparatus",
+          "critical": true,
+          "text": "The standardised test apparatus covers heaters with a rated capacity of 5 L to 500 L only.",
+          "question": "Please specify the rated storage capacity in litres.",
+          "options": []
+        },
+        {
+          "key": "voltage",
+          "dimension": "voltage",
+          "label": "Voltage",
+          "operator": "range",
+          "min": 220,
+          "max": 240,
+          "unit": "V",
+          "clause": "Clause 4 - Test supply",
+          "critical": true,
+          "text": "Tests are performed on a 220-240 V supply.",
+          "question": "Please specify the rated supply voltage.",
+          "options": []
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 13195:2018", "status": "Current in prototype database", "year": 2018, "note": "Single edition carried in the prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 15558:2023", "title": "Electric storage water heaters - Specification", "relationship": "Product Standard"},
+        {"edition": "IS 4151:2022", "title": "Installation of electric water heaters - Code of practice", "relationship": "Installation Standard"}
+      ],
+      "evidence": [
+        {"clause": "Clause 3.2 - Test apparatus", "text": "The standardised test apparatus covers heaters with a rated capacity of 5 L to 500 L only.", "supports": "capacity"},
+        {"clause": "Clause 4 - Test supply", "text": "Tests are performed on a 220-240 V supply.", "supports": "voltage"}
+      ]
+    },
+    {
+      "id": "IS2925-2013",
+      "is_number": "IS 2925",
+      "edition": "IS 2925:2013",
+      "year": 2013,
+      "title": "Industrial safety helmets - Specification",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Occupational Safety",
+      "category": "PPE",
+      "product_family": "safety-helmet",
+      "product_types": ["Safety Helmet", "Industrial Safety Helmet", "Hard Hat"],
+      "scope": "Requirements for industrial safety helmets intended for protection against falling objects and lateral impact in industrial, construction and mining operations, including shell construction, shock absorption, penetration resistance, marking and sizing.",
+      "keywords": ["safety helmet", "hard hat", "industrial helmet", "head protection", "PPE", "construction"],
+      "conditional_note": "Applicable subject to confirmation of the shell material used for the marking and impact checks.",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["Safety Helmet", "Industrial Safety Helmet", "Hard Hat"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to helmets designed for industrial head protection.",
+          "question": "Please specify the product being procured.",
+          "options": ["Electric Water Heater", "Safety Helmet", "TMT Rebar", "uPVC Pipe"]
+        },
+        {
+          "key": "application",
+          "dimension": "application",
+          "label": "Application",
+          "operator": "one_of",
+          "allowed": ["Construction", "Industrial", "Mining", "Institutional"],
+          "clause": "Clause 1 - Scope, para 2",
+          "critical": true,
+          "text": "Intended for construction, industrial and mining operations.",
+          "question": "Please specify the intended application.",
+          "options": ["Domestic", "Institutional", "Industrial", "Construction"]
+        },
+        {
+          "key": "material",
+          "dimension": "material",
+          "label": "Shell Material",
+          "operator": "one_of",
+          "allowed": ["ABS", "Polycarbonate", "HDPE"],
+          "clause": "Clause 5 - Material and construction",
+          "critical": false,
+          "text": "Shell material shall be identified for the impact and penetration checks.",
+          "question": "Please specify the helmet shell material.",
+          "options": ["ABS", "Polycarbonate", "HDPE"]
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 2925:2013", "status": "Current in prototype database", "year": 2013, "note": "Current edition in this prototype record."},
+        {"edition": "IS 2925:1984", "status": "Superseded", "year": 1984, "note": "Withdrawn - superseded by the 2013 edition in this prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 2926:2018", "title": "Methods of test for industrial safety helmets", "relationship": "Test Method"},
+        {"edition": "IS 3764:2019", "title": "Protective helmets for users of two-wheelers", "relationship": "Related Standard"},
+        {"edition": "IS 13911:2020", "title": "Personal protective equipment - Selection, use and maintenance", "relationship": "Normative Reference"}
+      ],
+      "evidence": [
+        {"clause": "Clause 1 - Scope", "text": "Applies to helmets designed for industrial head protection.", "supports": "product_type"},
+        {"clause": "Clause 1 - Scope, para 2", "text": "Intended for construction, industrial and mining operations.", "supports": "application"},
+        {"clause": "Clause 5 - Material and construction", "text": "Shell material shall be identified for the impact and penetration checks.", "supports": "material"}
+      ]
+    },
+    {
+      "id": "IS3764-2019",
+      "is_number": "IS 3764",
+      "edition": "IS 3764:2019",
+      "year": 2019,
+      "title": "Protective helmets for users of two-wheelers - Specification",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Occupational Safety",
+      "category": "PPE",
+      "product_family": "safety-helmet",
+      "product_types": ["Rider Helmet", "Two-Wheeler Helmet"],
+      "scope": "Requirements for helmets worn by riders and passengers of two-wheelers, covering impact attenuation, penetration resistance, retention system, field of vision and marking. Industrial head-protection helmets are outside this scope.",
+      "keywords": ["helmet", "rider helmet", "two wheeler", "motorcycle", "head protection", "chin strap"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["Rider Helmet", "Two-Wheeler Helmet"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to helmets for riders and passengers of two-wheelers.",
+          "question": "Please specify the product being procured.",
+          "options": ["Rider Helmet", "Two-Wheeler Helmet", "Safety Helmet"]
+        },
+        {
+          "key": "application",
+          "dimension": "application",
+          "label": "Application",
+          "operator": "one_of",
+          "allowed": ["Domestic", "Commercial"],
+          "clause": "Clause 1 - Scope, para 2",
+          "critical": true,
+          "text": "Intended for personal riding use on public roads.",
+          "question": "Please specify the intended application.",
+          "options": ["Domestic", "Commercial", "Construction"]
+        }
+      ],
+      "exclusions": [
+        {
+          "dimension": "product_type",
+          "not_allowed": ["Safety Helmet", "Industrial Safety Helmet", "Hard Hat"],
+          "clause": "Scope, para 1",
+          "reason": "Scope covers protective helmets for riders of two-wheelers only.",
+          "note": "Industrial head protection helmets are covered by IS 2925."
+        }
+      ],
+      "versions": [
+        {"edition": "IS 3764:2019", "status": "Current in prototype database", "year": 2019, "note": "Single edition carried in the prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 2925:2013", "title": "Industrial safety helmets - Specification", "relationship": "Related Standard"}
+      ],
+      "evidence": [
+        {"clause": "Scope, para 1", "text": "Covers protective helmets for riders and passengers of two-wheelers.", "supports": "product_type"}
+      ]
+    },
+    {
+      "id": "IS2925-1984",
+      "is_number": "IS 2925",
+      "edition": "IS 2925:1984",
+      "year": 1984,
+      "title": "Industrial safety helmets - Specification (previous edition)",
+      "status": "superseded",
+      "status_label": "Superseded by IS 2925:2013",
+      "sector": "Occupational Safety",
+      "category": "PPE",
+      "product_family": "safety-helmet",
+      "product_types": ["Safety Helmet", "Industrial Safety Helmet", "Hard Hat"],
+      "scope": "Previous edition of the industrial safety helmet specification. Retained in the prototype knowledge base so superseded editions can be demonstrated and reported separately.",
+      "keywords": ["safety helmet", "hard hat", "industrial helmet", "head protection"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["Safety Helmet", "Industrial Safety Helmet", "Hard Hat"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to helmets designed for industrial head protection.",
+          "question": "Please specify the product being procured.",
+          "options": ["Safety Helmet"]
+        },
+        {
+          "key": "application",
+          "dimension": "application",
+          "label": "Application",
+          "operator": "one_of",
+          "allowed": ["Construction", "Industrial", "Mining"],
+          "clause": "Clause 1 - Scope, para 2",
+          "critical": true,
+          "text": "Intended for construction, industrial and mining operations.",
+          "question": "Please specify the intended application.",
+          "options": ["Domestic", "Institutional", "Industrial", "Construction"]
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 2925:2013", "status": "Current in prototype database", "year": 2013, "note": "Supersedes this edition."},
+        {"edition": "IS 2925:1984", "status": "Superseded", "year": 1984, "note": "Withdrawn - do not cite in a new procurement specification."}
+      ],
+      "related": [
+        {"edition": "IS 2925:2013", "title": "Industrial safety helmets - Specification", "relationship": "Replacing Standard"},
+        {"edition": "IS 2926:2018", "title": "Methods of test for industrial safety helmets", "relationship": "Test Method"}
+      ],
+      "evidence": [
+        {"clause": "Edition record", "text": "Prototype record marks IS 2925:1984 as superseded by IS 2925:2013.", "supports": "status"}
+      ]
+    },
+    {
+      "id": "IS2926-2018",
+      "is_number": "IS 2926",
+      "edition": "IS 2926:2018",
+      "year": 2018,
+      "title": "Methods of test for industrial safety helmets",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Occupational Safety",
+      "category": "Test Method",
+      "product_family": "safety-helmet",
+      "product_types": ["Safety Helmet", "Industrial Safety Helmet", "Hard Hat"],
+      "scope": "Standard test methods for impact attenuation, penetration resistance, retention system strength and electrical insulation of industrial safety helmets.",
+      "keywords": ["test method", "impact test", "penetration", "helmet", "retention"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["Safety Helmet", "Industrial Safety Helmet", "Hard Hat"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to industrial safety helmets.",
+          "question": "Please specify the product being procured.",
+          "options": ["Safety Helmet"]
+        },
+        {
+          "key": "application",
+          "dimension": "application",
+          "label": "Application",
+          "operator": "one_of",
+          "allowed": ["Construction", "Industrial", "Mining", "Institutional"],
+          "clause": "Clause 1 - Scope, para 2",
+          "critical": true,
+          "text": "Tests are written for helmets used in construction, industrial and mining operations.",
+          "question": "Please specify the intended application.",
+          "options": ["Domestic", "Institutional", "Industrial", "Construction"]
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 2926:2018", "status": "Current in prototype database", "year": 2018, "note": "Single edition carried in the prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 2925:2013", "title": "Industrial safety helmets - Specification", "relationship": "Product Standard"}
+      ],
+      "evidence": [
+        {"clause": "Clause 1 - Scope", "text": "Applies to industrial safety helmets.", "supports": "product_type"}
+      ]
+    },
+    {
+      "id": "IS1786-2008",
+      "is_number": "IS 1786",
+      "edition": "IS 1786:2008",
+      "year": 2008,
+      "title": "High strength deformed steel bars and wires for concrete reinforcement - Specification",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Construction",
+      "category": "Steel",
+      "product_family": "tmt-rebar",
+      "product_types": ["TMT Rebar", "Deformed Steel Bar", "Reinforcing Steel Bar"],
+      "scope": "Requirements for high strength deformed steel bars and wires used as reinforcement in concrete, covering grade identification, chemical composition, mechanical properties, dimensional tolerances, mass per unit length, surface condition and test methods for bars of nominal size 6 mm to 40 mm.",
+      "keywords": ["TMT", "rebar", "deformed steel", "reinforcement", "Fe 500", "yield strength", "concrete"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["TMT Rebar", "Deformed Steel Bar", "Reinforcing Steel Bar"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to high strength deformed steel bars for concrete reinforcement.",
+          "question": "Please specify the product being procured.",
+          "options": ["TMT Rebar", "Deformed Steel Bar"]
+        },
+        {
+          "key": "grade",
+          "dimension": "grade",
+          "label": "Grade",
+          "operator": "one_of",
+          "allowed": ["Fe 500", "Fe 500D", "Fe 550", "Fe 550D", "Fe 600"],
+          "clause": "Clause 4 - Grade and designation",
+          "critical": true,
+          "text": "Bars shall be supplied in one of the grades listed in the standard.",
+          "question": "Please specify the steel grade.",
+          "options": ["Fe 500", "Fe 500D", "Fe 550", "Fe 600"]
+        },
+        {
+          "key": "diameter",
+          "dimension": "diameter",
+          "label": "Nominal Size",
+          "operator": "range",
+          "min": 6,
+          "max": 40,
+          "unit": "mm",
+          "clause": "Clause 4 - Nominal sizes",
+          "critical": true,
+          "text": "Covers nominal sizes from 6 mm to 40 mm.",
+          "question": "Please specify the nominal bar size in mm.",
+          "options": []
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 1786:2008", "status": "Current in prototype database", "year": 2008, "note": "Current edition in this prototype record."},
+        {"edition": "IS 1786:1985", "status": "Superseded", "year": 1985, "note": "Withdrawn - superseded by later editions in this prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 1570 (Part 4/Sec 3):2019", "title": "Methods of test for steel reinforcement bars", "relationship": "Test Method"},
+        {"edition": "IS 456:2000", "title": "Plain and reinforced concrete - Code of practice", "relationship": "Normative Reference"}
+      ],
+      "evidence": [
+        {"clause": "Clause 4 - Grade and designation", "text": "Bars shall be supplied in one of the grades listed in the standard.", "supports": "grade"},
+        {"clause": "Clause 4 - Nominal sizes", "text": "Covers nominal sizes from 6 mm to 40 mm.", "supports": "diameter"}
+      ]
+    },
+    {
+      "id": "IS1786-1985",
+      "is_number": "IS 1786",
+      "edition": "IS 1786:1985",
+      "year": 1985,
+      "title": "High strength deformed steel bars for concrete reinforcement - Specification (previous edition)",
+      "status": "superseded",
+      "status_label": "Superseded by IS 1786:2008",
+      "sector": "Construction",
+      "category": "Steel",
+      "product_family": "tmt-rebar",
+      "product_types": ["TMT Rebar", "Deformed Steel Bar", "Reinforcing Steel Bar"],
+      "scope": "Previous edition of the deformed steel bar specification. Retained in the prototype knowledge base so superseded editions can be demonstrated and reported separately.",
+      "keywords": ["TMT", "rebar", "deformed steel", "reinforcement", "Fe 500"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["TMT Rebar", "Deformed Steel Bar", "Reinforcing Steel Bar"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to high strength deformed steel bars for concrete reinforcement.",
+          "question": "Please specify the product being procured.",
+          "options": ["TMT Rebar", "Deformed Steel Bar"]
+        },
+        {
+          "key": "grade",
+          "dimension": "grade",
+          "label": "Grade",
+          "operator": "one_of",
+          "allowed": ["Fe 500", "Fe 550"],
+          "clause": "Clause 4 - Grade and designation",
+          "critical": true,
+          "text": "Bars shall be supplied in one of the grades listed in this edition.",
+          "question": "Please specify the steel grade.",
+          "options": ["Fe 500", "Fe 550"]
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 1786:2008", "status": "Current in prototype database", "year": 2008, "note": "Supersedes this edition."},
+        {"edition": "IS 1786:1985", "status": "Superseded", "year": 1985, "note": "Withdrawn - do not cite in a new procurement specification."}
+      ],
+      "related": [
+        {"edition": "IS 1786:2008", "title": "High strength deformed steel bars and wires for concrete reinforcement", "relationship": "Replacing Standard"},
+        {"edition": "IS 1570 (Part 4/Sec 3):2019", "title": "Methods of test for steel reinforcement bars", "relationship": "Test Method"}
+      ],
+      "evidence": [
+        {"clause": "Edition record", "text": "Prototype record marks IS 1786:1985 as superseded by IS 1786:2008.", "supports": "status"}
+      ]
+    },
+    {
+      "id": "IS1570P4S3-2019",
+      "is_number": "IS 1570 (Part 4/Sec 3)",
+      "edition": "IS 1570 (Part 4/Sec 3):2019",
+      "year": 2019,
+      "title": "Methods of test for steel reinforcement bars - Part 4 Section 3 Tensile, bend and re-bend tests",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Construction",
+      "category": "Test Method",
+      "product_family": "tmt-rebar",
+      "product_types": ["TMT Rebar", "Deformed Steel Bar", "Reinforcing Steel Bar"],
+      "scope": "Sampling and test procedures for tensile, bend and re-bend testing of steel reinforcement bars, applicable to nominal sizes from 6 mm to 25 mm.",
+      "keywords": ["test method", "tensile test", "bend test", "re-bend", "rebar", "yield strength"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["TMT Rebar", "Deformed Steel Bar", "Reinforcing Steel Bar"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to steel reinforcement bars.",
+          "question": "Please specify the product being procured.",
+          "options": ["TMT Rebar", "Deformed Steel Bar"]
+        },
+        {
+          "key": "diameter",
+          "dimension": "diameter",
+          "label": "Nominal Size",
+          "operator": "range",
+          "min": 6,
+          "max": 25,
+          "unit": "mm",
+          "clause": "Clause 3 - Test specimens",
+          "critical": true,
+          "text": "Test specimen preparation covers nominal sizes from 6 mm to 25 mm.",
+          "question": "Please specify the nominal bar size in mm.",
+          "options": []
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 1570 (Part 4/Sec 3):2019", "status": "Current in prototype database", "year": 2019, "note": "Single edition carried in the prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 1786:2008", "title": "High strength deformed steel bars and wires for concrete reinforcement", "relationship": "Product Standard"}
+      ],
+      "evidence": [
+        {"clause": "Clause 3 - Test specimens", "text": "Test specimen preparation covers nominal sizes from 6 mm to 25 mm.", "supports": "diameter"}
+      ]
+    },
+    {
+      "id": "IS4985-2000",
+      "is_number": "IS 4985",
+      "edition": "IS 4985:2000",
+      "year": 2000,
+      "title": "Unplasticized polyvinyl chloride (uPVC) pipes for potable water - Specification",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Water",
+      "category": "Pipes",
+      "product_family": "upvc-pipe",
+      "product_types": ["uPVC Pipe", "PVC Pipe"],
+      "scope": "Requirements for uPVC pipes intended for use in potable water services, covering material, dimensions, workmanship, physical properties, testing and marking for nominal sizes from 20 mm to 315 mm.",
+      "keywords": ["uPVC", "PVC pipe", "potable water", "drinking water", "pipe", "pressure"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["uPVC Pipe", "PVC Pipe"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to uPVC pipes for potable water services.",
+          "question": "Please specify the product being procured.",
+          "options": ["uPVC Pipe", "PVC Pipe"]
+        },
+        {
+          "key": "material",
+          "dimension": "material",
+          "label": "Material",
+          "operator": "one_of",
+          "allowed": ["uPVC", "PVC"],
+          "clause": "Clause 3 - Material",
+          "critical": true,
+          "text": "Pipe shall be manufactured from unplasticized polyvinyl chloride compound.",
+          "question": "Please specify the pipe material.",
+          "options": ["uPVC", "PVC"]
+        },
+        {
+          "key": "application",
+          "dimension": "application",
+          "label": "Application",
+          "operator": "one_of",
+          "allowed": ["Potable Water", "Drinking Water"],
+          "clause": "Clause 1 - Scope, para 2",
+          "critical": true,
+          "text": "Intended for potable (drinking) water services.",
+          "question": "Please specify the intended application.",
+          "options": ["Potable Water", "Drainage"]
+        },
+        {
+          "key": "diameter",
+          "dimension": "diameter",
+          "label": "Nominal Size",
+          "operator": "range",
+          "min": 20,
+          "max": 315,
+          "unit": "mm",
+          "clause": "Clause 4 - Dimensions",
+          "critical": false,
+          "text": "Covers nominal sizes from 20 mm to 315 mm.",
+          "question": "Please specify the nominal pipe size in mm.",
+          "options": []
+        }
+      ],
+      "exclusions": [],
+      "versions": [
+        {"edition": "IS 4985:2000", "status": "Current in prototype database", "year": 2000, "note": "Current edition in this prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 14151:2015", "title": "uPVC pipes for soil and waste discharge - Specification", "relationship": "Related Standard"},
+        {"edition": "IS 15778:2017", "title": "Methods of test for uPVC pipes", "relationship": "Test Method"}
+      ],
+      "evidence": [
+        {"clause": "Clause 1 - Scope, para 2", "text": "Intended for potable (drinking) water services.", "supports": "application"},
+        {"clause": "Clause 3 - Material", "text": "Pipe shall be manufactured from unplasticized polyvinyl chloride compound.", "supports": "material"}
+      ]
+    },
+    {
+      "id": "IS14151-2015",
+      "is_number": "IS 14151",
+      "edition": "IS 14151:2015",
+      "year": 2015,
+      "title": "Unplasticized polyvinyl chloride (uPVC) pipes for soil and waste discharge - Specification",
+      "status": "current",
+      "status_label": "Current in prototype database",
+      "sector": "Water",
+      "category": "Pipes",
+      "product_family": "upvc-pipe",
+      "product_types": ["uPVC Pipe", "PVC Pipe"],
+      "scope": "Requirements for uPVC pipes intended for below-ground soil and waste discharge systems. Pipes for potable (drinking) water services are outside the scope of this standard.",
+      "keywords": ["uPVC", "drainage pipe", "soil", "waste discharge", "sewer", "pipe"],
+      "conditional_note": "",
+      "conditions": [
+        {
+          "key": "product_type",
+          "dimension": "product_type",
+          "label": "Product Type",
+          "operator": "one_of",
+          "allowed": ["uPVC Pipe", "PVC Pipe"],
+          "clause": "Clause 1 - Scope",
+          "critical": true,
+          "text": "Applies to uPVC pipes for discharge systems.",
+          "question": "Please specify the product being procured.",
+          "options": ["uPVC Pipe", "PVC Pipe"]
+        },
+        {
+          "key": "application",
+          "dimension": "application",
+          "label": "Application",
+          "operator": "one_of",
+          "allowed": ["Drainage", "Soil and Waste Discharge"],
+          "clause": "Clause 1 - Scope, para 2",
+          "critical": true,
+          "text": "Intended for below-ground soil and waste discharge systems.",
+          "question": "Please specify the intended application.",
+          "options": ["Potable Water", "Drainage"]
+        }
+      ],
+      "exclusions": [
+        {
+          "dimension": "application",
+          "not_allowed": ["Potable Water", "Drinking Water"],
+          "clause": "Scope, para 1",
+          "reason": "Scope is limited to soil and waste discharge systems.",
+          "note": "Pipes for potable water are covered by IS 4985."
+        }
+      ],
+      "versions": [
+        {"edition": "IS 14151:2015", "status": "Current in prototype database", "year": 2015, "note": "Current edition in this prototype record."}
+      ],
+      "related": [
+        {"edition": "IS 4985:2000", "title": "uPVC pipes for potable water - Specification", "relationship": "Related Standard"}
+      ],
+      "evidence": [
+        {"clause": "Clause 1 - Scope, para 2", "text": "Intended for below-ground soil and waste discharge systems.", "supports": "application"}
+      ]
+    }
+  ]
+}

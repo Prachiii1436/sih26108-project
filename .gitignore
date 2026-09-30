@@ -1,0 +1,43 @@
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Backend virtual environments
+backend/venv/
+backend/.venv/
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+
+# Backend runtime/generated files
+backend/var/
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary dependency file
+backend/requirements-temp.txt
+
+# TypeScript cache
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

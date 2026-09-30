@@ -1,0 +1,62 @@
+# =============================================================================
+#  SIH26108 - backend dependencies
+#  Python 3.10+ (developed and tested on 3.10)
+#
+#  Install (XAMPP / Windows):
+#    cd backend
+#    python -m venv venv
+#    venv\Scripts\activate
+#    pip install -r requirements.txt
+#
+#  Install (Linux / macOS):
+#    cd backend && python3 -m venv venv && source venv/bin/activate
+#    pip install -r requirements.txt
+# =============================================================================
+
+# --- Web framework ---------------------------------------------------------
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+python-multipart==0.0.32
+pydantic==2.11.3
+pydantic-core==2.33.1
+annotated-types==0.8.0
+typing-extensions==4.16.0
+typing-inspection==0.4.4
+
+# --- Configuration ---------------------------------------------------------
+python-dotenv==1.2.3
+
+# --- Database (XAMPP MySQL / MariaDB on 127.0.0.1:3307) --------------------
+SQLAlchemy==2.0.41
+PyMySQL==1.1.1
+cryptography==50.0.1          # required by PyMySQL for caching_sha2_password
+greenlet==3.5.6
+
+# --- AI / NLP / embeddings -------------------------------------------------
+sentence-transformers==4.1.0
+transformers==4.57.6
+torch==2.14.0
+tokenizers==0.22.2
+huggingface-hub==0.36.2
+safetensors==0.7.0
+numpy==2.2.5
+scipy==1.15.3
+scikit-learn==1.7.2
+regex==2026.9.10
+requests==2.34.2
+
+# --- Vector search ---------------------------------------------------------
+# faiss-cpu gives the fast in-process cosine index. The app automatically falls
+# back to a pure-MySQL/numpy implementation when FAISS is unavailable, so this
+# line is safe to comment out on constrained machines.
+faiss-cpu==1.15.1
+
+# --- Data import (scripts/import_standards.py) -----------------------------
+pandas==2.3.3
+openpyxl==3.1.5            # .xlsx support
+
+# --- Document upload (POST /api/applicability/upload) ----------------------
+pymupdf==1.28.2            # PyMuPDF - PDF text extraction for the prototype
+
+# --- Logging ---------------------------------------------------------------
+colorama==0.4.6
